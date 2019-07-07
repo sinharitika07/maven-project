@@ -50,8 +50,9 @@ pipeline {
 }
      {
         stage ('deploy Stage') {
-    sshagent (credentials: ['cccdae4b-fe34-4476-ab6d-c5c2d75d4e29']) {
-    sh 'scp -o StrictHostKeyChecking=no -l */target/*.war ec2-user@54.196.10.104:/var/lib/tomcat/webapps'
+            
+            sshagent (credentials: ['cccdae4b-fe34-4476-ab6d-c5c2d75d4e29']) {
+               sh 'scp -o StrictHostKeyChecking=no -l */target/*.war ec2-user@54.196.10.104:/var/lib/tomcat/webapps'
                 
             }
         }
