@@ -7,8 +7,10 @@ git 'https://github.com/sinharitika07/maven-project.git'
 }
 {
 stage ('Compile Stage') {
+{agent label 'master'}
 steps {
-withMaven(maven : 'LocalMaven') {
+withMaven(maven : 'LocalMaven')
+{
 sh 'mvn clean compile'
 }
 }
