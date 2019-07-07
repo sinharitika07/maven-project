@@ -9,7 +9,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven:'Maven3.5.2') {
+                withMaven(maven:'LocalMaven') {
                     sh 'mvn clean compile'
                 }
             }
