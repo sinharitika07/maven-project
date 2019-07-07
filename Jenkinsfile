@@ -28,11 +28,11 @@ pipeline {
 }
 }
       {
-        stage ('package Stage') {
+        stage ('Install Stage') {
 
             steps {
                 withMaven(maven:'LocalMaven') {
-                    sh 'mvn package'
+                    sh 'mvn install'
                 }
             }
 }
