@@ -17,11 +17,11 @@ pipeline {
 }
 }
     {
-        stage ('package Stage') {
+        stage ('Test Stage') {
 
             steps {
                 withMaven(maven:'LocalMaven') {
-                    sh 'mvn package'
+                    sh 'mvn test'
                 }
             }
 
