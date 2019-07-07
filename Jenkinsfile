@@ -13,17 +13,6 @@ pipeline {
                     sh 'mvn clean compile'
                 }
             }
-        }
-                
-      {
-        stage ('packages Stage') {
-
-            steps {
-                withMaven(maven:'LocalMaven') {
-                    sh 'mvn package'
-                }          
-            }
-        }
 
 }
 }
