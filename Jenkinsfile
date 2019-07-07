@@ -12,6 +12,8 @@ pipeline {
                 withMaven(maven:'LocalMaven') {
                     sh 'mvn clean compile'
                 }
+            }
+        }
                 
       {
         stage ('packages Stage') {
@@ -21,6 +23,7 @@ pipeline {
                     sh 'mvn package'
                 }          
             }
+        }
 }
 }
 }
