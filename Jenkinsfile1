@@ -11,7 +11,7 @@ agent {label 'master'}
 steps {
 withAnt(installation: 'Ant')
 {
-sh 'ant build'
+sh 'ant clean'
 }
 }
 }
