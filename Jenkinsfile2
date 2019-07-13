@@ -1,0 +1,30 @@
+pipeline {
+agent any
+stages {
+stage('SCM Checkout'){
+git 'https://github.com/sinharitika07/maven-project.git'
+}
+}
+{
+stage ('Compile Stage') {
+agent {label 'master'}
+steps {
+withAnt(installation: 'Ant')
+{
+sh 'ant -f build.xml'
+}
+}
+}
+
+stage ('Deploy Stage') {
+steps {
+
+sshagent (credentials: ['cccdae4b-fe34-4476-ab6d-c5c2d75d4e29']) {
+sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline2@2/dist/webapp.war ec2-user@172.31.87.227:/var/lib/tomcat/webapps'
+}
+}
+}  
+
+  
+}
+}
