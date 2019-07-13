@@ -20,7 +20,7 @@ stage ('Deploy Stage') {
 steps {
 
 sshagent (credentials: ['4efb1e5c-2734-46ff-99d5-b06ac574bb95']) {
-sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline2@2/dist/webapp.war ec2-user@54.211.195.104:/var/lib/tomcat/webapps'
+sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline2@2/dist/webapp.war ec2-user@54.211.195.104:/opt/wildfly/standalone/deployments'
 }
 }
 }  
