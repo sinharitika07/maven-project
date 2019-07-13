@@ -13,7 +13,7 @@
 	</target>
 	
 	<target name="compile" depends="init" >
-		<javac destdir="build/classes" debug="true" srcdir="webapp" includeantruntime="true">
+		<javac destdir="build/classes" debug="true" srcdir="webapp" includeantruntime="false">
 		</javac>
 	</target>
 	
