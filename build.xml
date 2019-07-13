@@ -13,11 +13,11 @@
 	</target>
 	
 	<target name="compile" depends="init" >
-		<javac destdir="build/classes" debug="true" srcdir="webapp">
+		<javac destdir="build/classes" debug="true" srcdir="webapp" includeantruntime="true">
 		</javac>
 	</target>
 	
-	<target name="war" depends="compile" includeantruntime="true">
+	<target name="war" depends="compile">
 		<war destfile="dist/webapp.war" webxml="webapp/src/main/webapp/WEB-INF/web.xml">
 			<classes dir="build/classes"/>
 		</war>
