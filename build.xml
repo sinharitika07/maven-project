@@ -17,7 +17,7 @@
 		</javac>
 	</target>
 	
-	<target name="war" depends="compile">
+	<target name="war" depends="compile" includeantruntime="true">
 		<war destfile="dist/webapp.war" webxml="webapp/src/main/webapp/WEB-INF/web.xml">
 			<classes dir="build/classes"/>
 		</war>
