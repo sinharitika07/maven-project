@@ -31,6 +31,17 @@ sh 'mvn clean install'
 }
 }
 }
+  
+stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    // Optionally use a Maven environment you've configured already
+                    withMaven(maven : 'LocalMaven') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                }
+            }
+        }
 
 stage ('Deploy Stage') {
 steps {
